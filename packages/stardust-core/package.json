@@ -18,7 +18,7 @@
   ],
   "scripts": {
     "build:ts": "tsc -p .",
-    "build:pegjs": "pegjs --allowed-start-rules FileEntry,ExpressionEntry src/compiler/parser.pegjs dist/compiler/parser_pegjs.js",
+    "build:pegjs": "pegjs --allowed-start-rules FileEntry,ExpressionEntry -o dist/compiler/parser_pegjs.js src/compiler/parser.pegjs",
     "build": "yarn run build:ts && yarn run build:pegjs",
     "test": "mocha test",
     "prepublish": "yarn run build",
