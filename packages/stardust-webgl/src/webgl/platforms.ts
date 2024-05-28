@@ -13,8 +13,8 @@ export class WebGLCanvasPlatform2D extends WebGLPlatform {
     width: number = 600,
     height: number = 400
   ) {
-    const GL =
-      canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    const GL: WebGLRenderingContext =
+      canvas.getContext("webgl") || canvas.getContext("experimental-webgl") as WebGLRenderingContext;
     try {
       GL.getExtension("OES_texture_float");
       GL.getExtension("OES_texture_float_linear");
@@ -83,8 +83,8 @@ export class WebGLCanvasPlatform3D extends WebGLPlatform {
     width: number = 600,
     height: number = 400
   ) {
-    const GL =
-      canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    const GL: WebGLRenderingContext =
+      canvas.getContext("webgl") || canvas.getContext("experimental-webgl") as WebGLRenderingContext;
     super(GL);
 
     this._canvas = canvas;
@@ -163,8 +163,8 @@ export class WebGLCanvasPlatformWebVR extends WebGLPlatform {
     width: number = 600,
     height: number = 400
   ) {
-    const GL =
-      canvas.getContext("webgl") || canvas.getContext("experimental-webgl");
+    const GL: WebGLRenderingContext =
+      canvas.getContext("webgl") || canvas.getContext("experimental-webgl") as WebGLRenderingContext;
     super(GL);
 
     this._canvas = canvas;

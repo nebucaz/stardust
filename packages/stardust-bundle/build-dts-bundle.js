@@ -13,11 +13,13 @@ let subprojects = [
 
 Promise.all(subprojects.map((project) => {
     return require('dts-generator').default({
-        name: project.name,
+        //name: project.name,
+        prefix: project.name,
         project: project.path,
         indent: "    ",
         out: `stardust-bundle/${project.name}.d.ts`,
-        moduleResolution: ts.ModuleResolutionKind.NodeJs,
+        //moduleResolution: ts.ModuleResolutionKind.NodeJs,
+        moduleResolution: ts.ModuleResolutionKind.Node16,
         resolveModuleId: (params) => {
             return project.name + '/' + params.currentModuleId.replace(/\/index$/, '');
         },
